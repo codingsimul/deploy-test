@@ -1,6 +1,8 @@
+#work flow라고 불리는 yml 파일
 name: Github Actions 실행시켜보기
-
+# work flow 이름.
 on:
+#  event
   push:
     branches:
       - main
@@ -12,3 +14,8 @@ jobs:
     steps:
       - name: Hellow world 찍기
         run: echo "hello world"
+
+      - name: 여러 명령어 작성하기
+        run: | 
+          echo "Good"
+          echo "Morning"
