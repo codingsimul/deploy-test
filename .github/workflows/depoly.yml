@@ -1,29 +1,19 @@
-#work flow라고 불리는 yml 파일
-name: Github Actions 실행시켜보기
-# work flow 이름.
+name: first-yml
+
 on:
-#  event
   push:
     branches:
       - main
 
 jobs:
-  My-depoly-job:
-    runs-on: ubuntu-latest
+  my-job:
+    runs-on: ubuntu-lastest
 
     steps:
-      - name: Hellow world 찍기
+      - name: first
         run: echo "hello world"
 
-      - name: 여러 명령어 작성하기
-        run: | 
-          echo "Good"
-          echo "Morning"
-
-      - name: Github Actions 자체에 저장되어 있는 변수 사용해보기
+      - name: second
         run: |
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
-
-      - name: Github에 노출되면 안되는 값들.
-        run: echo ${{secrets.MY_NAME}}
